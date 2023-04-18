@@ -1,0 +1,67 @@
+// Variables
+//
+// Define variables that will later override bootstrap defaults
+
+$enable-print-styles: false;
+
+// Colors
+$green: #A2C02F;
+$blue: #045FBB;
+$dark: #2E2B2B;
+$primary: $green;
+$secondary: $blue;
+
+$body-color: $dark;
+$headings-color: $dark;
+$input-focus-border-color: $primary;
+
+$accordion-button-icon:         url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg id='Group_162' data-name='Group 162' transform='translate(-450 -1553)'%3E%3Ccircle id='Ellipse_35' data-name='Ellipse 35' cx='8' cy='8' r='8' transform='translate(450 1553)' fill='%23045fbb'/%3E%3Cpath id='download' d='M1.572,4.572a.248.248,0,0,1,.35,0l2.795,2.8,2.795-2.8a.248.248,0,1,1,.35.35l-2.97,2.97a.248.248,0,0,1-.35,0l-2.97-2.97a.248.248,0,0,1,0-.35Z' transform='translate(453.283 1555.369)' fill='%23fff' fill-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E%0A");
+$accordion-button-active-icon:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg id='Group_163' data-name='Group 163' transform='translate(-468 -1553)'%3E%3Ccircle id='Ellipse_35' data-name='Ellipse 35' cx='8' cy='8' r='8' transform='translate(468 1553)' fill='%23679dd5'/%3E%3Cpath id='download' d='M1.572,4.572a.248.248,0,0,1,.35,0l2.795,2.8,2.795-2.8a.248.248,0,1,1,.35.35l-2.97,2.97a.248.248,0,0,1-.35,0l-2.97-2.97a.248.248,0,0,1,0-.35Z' transform='translate(471.283 1555.369)' fill='%23fff' fill-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E%0A");
+
+$selection-color: #d9edf7;
+$input-btn-focus-color: rgba($blue,.25);
+
+// BS5 overrides
+$btn-border-width: 2px;
+
+// Misc
+$spacer: 24px;
+$spacers: () !default;
+$spacers: map-merge((
+    0: 0,
+    1: ($spacer * 1),
+    2: ($spacer * 2),
+    3: ($spacer * 3),
+    4: ($spacer * 4),
+    5: ($spacer * 5),
+    6: ($spacer * 6),
+    7: ($spacer * 7),
+    8: ($spacer * 8),
+    9: ($spacer * 9),
+    10: ($spacer * 10),
+    11: ($spacer * 11),
+    12: ($spacer * 12),
+    13: ($spacer * 13),
+    14: ($spacer * 14),
+    35: ($spacer * .35),
+    250: ($spacer * .25),
+    50: ($spacer * .5),
+    75: ($spacer * .75),
+    125: ($spacer * 1.25),
+    150: ($spacer * 1.5),
+    175: ($spacer * 1.75),
+    225: ($spacer * 2.25),
+    25: ($spacer * 2.5),
+    350: ($spacer * 3.5)
+), $spacers);
+
+
+// Fonts
+$font-family-sans-serif: "futura-pt", sans-serif;
+$font-family-serif: $font-family-sans-serif;
+$headings-font-family: $font-family-serif;
+$ff-b: "futura-pt-bold", sans-serif;
+
+// Figure
+$figure-margin: $spacer * 2.5;
+$matrix-block-margin: $figure-margin;

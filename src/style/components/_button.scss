@@ -1,0 +1,20 @@
+button {
+    cursor: pointer;
+}
+.btn {
+    font-family: $ff-b;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 14px;
+    min-height: 44px;
+    min-width: 168px;
+}
+.btn-primary {
+    color: white;
+    text-transform: capitalize;
+}
+.btn-outline-secondary {
+    border-radius: 0;
+    text-transform: uppercase;
+}
