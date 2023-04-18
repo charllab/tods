@@ -10,3 +10,8 @@
     line-height: 24px;
     font-weight: 700;
 }
+.active {
+    .nav-link {
+        color: $green;
+    }
+}

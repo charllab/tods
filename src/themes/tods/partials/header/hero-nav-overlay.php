@@ -8,7 +8,7 @@
             </div><!-- row -->
         </div><!-- container -->
     </section>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary py-0">
+    <nav class="navbar navbar-expand-lg py-0">
         <div class="container">
             <div class="nav-logo">
                 <a href="<?php echo esc_url(home_url('/')); ?>">

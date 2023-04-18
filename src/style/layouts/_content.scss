@@ -37,15 +37,24 @@
     h1 {
         font-family: $ff-b;
         font-weight: 700;
+        margin-bottom: 0;
         @include media-breakpoint-up(lg) {
             font-size: 60px;
             line-height: 1;
+        }
+        strong {
+            @extend .super;
         }
     }
 
     i.bi {
         font-size: 40px;
         color: white;
+    }
+    .clear-out-p {
+        p {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -57,7 +66,7 @@
 
 .hero--short {
     @include media-breakpoint-up(lg) {
-        min-height: 452px;
+        min-height: 552px;
     }
 }
 
