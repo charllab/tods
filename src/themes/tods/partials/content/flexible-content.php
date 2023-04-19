@@ -280,7 +280,7 @@ endif;
                                                 </button>
                                             </h2>
                                             <div id="collapseQuestion--<?php echo $count; ?>"
-                                                 class="accordion-collapse collapse <?php echo $count == 0 ? 'show' : ''; ?>"
+                                                 class="accordion-collapse collapse"
                                                  data-bs-parent="#questions">
                                                 <div class="accordion-body">
                                                     <?php echo $question['answer']; ?>
@@ -531,7 +531,7 @@ endif;
             <?php
             $cards = $layout['cards'];
             if ($cards):?>
-                <section class="price-cards">
+                <section class="price-cards pb-75">
                     <div class="container">
                         <div class="row justify-content-center">
                             <?php foreach ($cards as $card) : ?>
