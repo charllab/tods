@@ -32,7 +32,7 @@ jQuery(function () {
     // Sponsor slider
     jQuery('#supporters-slider').owlCarousel({
         loop: true,
-        margin: 4,
+        margin: 24,
         nav: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,
