@@ -20,6 +20,23 @@ jQuery(function () {
         }
     });
 
+    // rating-slider
+    jQuery('#rating-slider').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplaySpeed: 1500,
+        autoplayTimeout: 9000,
+        autoplay: true,
+        items: 1,
+        navText: ["<i class='support--arrows svg-support-left-arrow'></i>", "<i class='support--arrows svg-support-right-arrow'></i>"],
+        responsive: {
+            992: {
+                items: 2,
+            }
+        }
+    });
+
     // Lightbox gallery
     jQuery('.js-gallery').magnificPopup({
         delegate: 'a',
