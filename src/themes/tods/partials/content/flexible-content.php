@@ -565,8 +565,10 @@ endif;
                                 ?>
                                 <div class="item">
                                     <?php if ($sponsorlink): ?>
-                                    <a href="<?php echo $sponsorlink['url'] ?>" class="text-white mb-1"
-                                       title="Visit supporter">
+                                    <a href="<?php echo $sponsorlink; ?>" class="text-white mb-1"
+                                       title="Visit supporter"
+                                       target="_blank"
+                                    >
                                         <?php endif;
                                         ?>
                                         <img src="<?php echo $sponsorlogo['url']; ?>"
