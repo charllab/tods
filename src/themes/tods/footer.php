@@ -18,7 +18,7 @@
                     <a href="<?php echo esc_url(home_url('/')); ?>">
                         <img src="<?php bloginfo('template_url'); ?>/images/logo-white.svg"
                              alt="<?php bloginfo('name'); ?> - Logo"
-                             class="img-fluid mx-auto mt-1">
+                             class="img-fluid mx-auto my-75">
                         <span class="sr-only"><?php bloginfo('name'); ?></span>
                     </a>
                 </div><!-- col -->

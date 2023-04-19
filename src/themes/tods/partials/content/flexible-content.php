@@ -404,7 +404,7 @@ endif;
             $tablestyle = $layout['table_style'];
             if ($table):
                 if($tablestyle == 'basic-table'):?>
-                <section class="basic-table py-3">
+                <section class="basic-table pb-2">
                     <div class="container">
                         <div class="table-responsive">
                             <table class="table table-bordered border-secondary table-hover">
@@ -429,7 +429,7 @@ endif;
                     </div>
                 </section>
                     <?php else: ?>
-                    <section class="fancy-table py-3">
+                    <section class="fancy-table pb-2">
                         <div class="container">
                             <div class="row no-gutters">
                                 <div class="col-12">
