@@ -10,3 +10,20 @@
         -webkit-transform-origin: 0 0
     }
 }
+.gform_button {
+    @extend .btn;
+    color: white;
+    background-color: $primary;
+
+    &:hover,
+    &:active {
+        background-color: darken($primary, 10%);
+        color: white;
+    }
+}
+
+// text-area border
+body .gform_body .gform_fields .gfield input[type=text],
+body .gform_body .gform_fields .gfield input[type=email],
+body .gform_body .gform_fields .gfield input[type=tel],
+body .gform_body .gform_fields .gfield textarea {border: 1px solid #bfbfbf}

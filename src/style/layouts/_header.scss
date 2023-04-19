@@ -12,6 +12,15 @@
 }
 .active {
     .nav-link {
-        color: $green;
+        color: $blue;
+        @include media-breakpoint-up(lg) {
+            color: $green;
+        }
+    }
+}
+#navbarNav {
+    @include media-breakpoint-down(lg){
+        background: $green;
+        padding: $spacer;
     }
 }

@@ -1,4 +1,16 @@
 <footer>
+    <section class="contact-form pt-3 pb-2" id="contact">
+        <div class="container">
+            <div class="row g-lg-2">
+                <div class="col-lg-7">
+                    <?php the_field('contact_form_text', 'option');?>
+                </div>
+                <div class="col-lg-5">
+                    <?php echo do_shortcode('[gravityform id="1" title="false" description="false" ajax="true" tabindex="2" ]'); ?>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-secondary">
         <div class="container">
             <div class="row text-white">

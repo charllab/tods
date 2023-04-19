@@ -1,5 +1,34 @@
 jQuery(function () {
 
+    // Scrolling anchors
+    // Function to smoothly scroll to the target element
+    function smoothScrollTo(targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+// Event listener for the navigation links
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get all the .nav-link elements inside .js-scrollable-anchor
+        const navLinks = document.querySelectorAll('.js-scrollable-anchor > a.nav-link');
+
+        // Attach click event listeners to each navigation link
+        navLinks.forEach((navLink) => {
+            navLink.addEventListener('click', function (event) {
+                // Prevent the default action (jumping to the target)
+                event.preventDefault();
+
+                // Get the target element
+                const targetID = navLink.getAttribute('href');
+                const targetElement = document.querySelector(targetID);
+
+                // Scroll to the target element
+                if (targetElement) {
+                    smoothScrollTo(targetElement);
+                }
+            });
+        });
+    });
+
     // Sponsor slider
     jQuery('#supporters-slider').owlCarousel({
         loop: true,

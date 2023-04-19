@@ -1,13 +1,17 @@
-<header class="fixed-top">
-    <section class="notice-bar bg-primary py-50">
+<header class="position-absolute w-100 z-index-500">
+    <?php
+    $notice = get_field('notice_bar', 'option');
+    if($notice):?>
+    <section class="notice-bar bg-primary pt-50">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 text-center text-white">
-                    IMPORTANT INFORMATION
+                    <?php echo $notice; ?>
                 </div><!-- col -->
             </div><!-- row -->
         </div><!-- container -->
     </section>
+    <?php endif; ?>
     <nav class="navbar navbar-expand-lg py-0">
         <div class="container">
             <div class="nav-logo">
@@ -32,7 +36,7 @@
                     'walker' => new understrap_WP_Bootstrap_Navwalker(),
                 ]); ?>
 
-            <a href="<?php echo esc_url(home_url('/contact-us')); ?>" class="btn btn-primary d-none d-lg-block">Contact Us</a>
+            <a href="#contact" class="btn btn-primary d-none d-lg-block js-scrollable-anchor">Contact Us</a>
 
         </div>
     </nav>

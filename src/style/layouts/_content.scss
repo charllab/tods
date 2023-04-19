@@ -61,7 +61,10 @@
 }
 
 .hero--tall {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
+        min-height: 600px;
+    }
+    @include media-breakpoint-up(xl) {
         min-height: 800px;
     }
 }
@@ -81,7 +84,7 @@
         font-size: 40px;
 
         i {
-            margin-right: 16px;
+            margin: 0 16px;
         }
     }
 
@@ -90,6 +93,7 @@
             @extend .small;
             margin-bottom: 0;
         }
+
         span {
             display: block;
         }
@@ -166,17 +170,23 @@
 }
 
 .pingping__icon {
-    width: 132px;
-    height: 132px;
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
     background-color: #06264c;
-    font-size: 60px;
     color: $blue;
     border-radius: 100%;
-    top: 0;
+    top: 60px;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
+    @include media-breakpoint-up(lg) {
+        top: 0;
+        width: 132px;
+        height: 132px;
+        font-size: 60px;
+    }
 
     .rotate-icon {
         transform: rotate(-25deg);
@@ -187,8 +197,12 @@
     .info-icon {
         background-color: #26264b;
         border-radius: 50%;
-        width: 120px;
-        height: 120px;
+        width: 60px;
+        height: 60px;
+        @include media-breakpoint-up(lg) {
+            width: 120px;
+            height: 120px;
+        }
 
         i.bi {
             font-size: 60px;
@@ -200,6 +214,7 @@
         width: 48px;
         height: 48px;
     }
+
     .card-profile img {
         width: 48px;
         height: 48px;
@@ -253,6 +268,7 @@
     .rating-stars {
         font-size: 20px;
         color: #f58634;
+
         .text-gold {
             color: #f58634;
         }
@@ -268,17 +284,19 @@
         border-radius: 24px;
         max-width: 680px;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
         h1 {
             font-size: 40px;
             line-height: 44px;
             font-weight: 400;
         }
 
-        p {
+        h2 {
             font-size: 24px;
             line-height: 28px;
         }
     }
+
     .row {
         & > .col > .card {
             background-color: #045fbb;
@@ -289,6 +307,7 @@
                 background-color: #679dd5;
             }
         }
+
         &:nth-of-type(3n+3) {
             & > .col > .card {
                 background-color: #98bde2;
@@ -299,8 +318,10 @@
 
 .checkbox-list-group {
     .multicolumn-list {
-        column-count: 2;
-        column-gap: 30px;
+        @include media-breakpoint-up(lg) {
+            column-count: 2;
+            column-gap: 30px;
+        }
     }
 
     .multicolumn-list li {
@@ -320,6 +341,13 @@
         column-count: 2;
         column-gap: 30px;
     }
+
+    .accordion-button, .accordion-body {
+        padding-top: 0;
+        padding-bottom: 0;
+        box-shadow: none;
+    }
+
     .accordion-button:not(.collapsed) {
         background-color: #fff;
     }
@@ -369,7 +397,15 @@
                 padding: 24px 48px;
                 background: rgb(71, 135, 199);
                 background: linear-gradient(20deg, rgba(71, 135, 199, 1) 0%, rgba(71, 135, 199, 1) 50%, rgba(85, 144, 203, 1) 50%, rgba(85, 144, 203, 1) 100%);
-                color: white;
+
+                h1 {
+                    color: white;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 0;
+                    font-family: $ff-b;
+                    font-weight: 700;
+                }
 
                 &:hover {
                     background: rgb(26, 108, 191);
@@ -377,8 +413,11 @@
                 }
 
                 &.active {
-                    color: $blue;
                     background: #f5f3ef;
+
+                    h1 {
+                        color: $blue;
+                    }
                 }
 
             }
@@ -389,10 +428,15 @@
         border: 20px solid #ced7e0;
 
         .list-group-item {
-            padding-left: 40px;
+            padding-left: 56px;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle id='Ellipse_17' data-name='Ellipse 17' cx='8' cy='8' r='8' fill='%23045fbb'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: 8px 16px;
+            background-position: 20px 16px;
+
+            a {
+                color: $blue;
+                text-decoration: none;
+            }
         }
     }
 }
@@ -438,6 +482,22 @@
         overflow: hidden;
     }
 }
+
+.profile-cards {
+    .card-p {
+        height: 468px;
+        width: 100%;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .modal-photo {
+        height: 468px;
+        width: 340px;
+        object-fit: cover;
+        overflow: hidden;
+    }
+}
+
 
 .compat-object-fit {
     background-size: cover;
@@ -519,10 +579,27 @@
 .email-signup {
     .h2_styling {
         & > h2 {
+            font-family: $font-family-sans-serif;
             font-weight: 300;
             @include media-breakpoint-up(lg) {
                 margin-bottom: 0;
             }
         }
+    }
+}
+
+.profile-modals {
+    .btn-close {
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E") center/1em auto no-repeat;
+    }
+
+    .modal-photo {
+        max-height: 408px;
+    }
+
+    h2 {
+        @extend h3;
+        font-family: $ff-b;
+        font-weight: 700;
     }
 }
