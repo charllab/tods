@@ -53,6 +53,7 @@ jQuery(function () {
     jQuery('#rating-slider').owlCarousel({
         loop: true,
         margin: 10,
+        dots: false,
         nav: true,
         autoplaySpeed: 1500,
         autoplayTimeout: 9000,

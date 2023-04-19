@@ -2,6 +2,9 @@
     img {
         width: 104px;
         height: auto;
+        @include media-breakpoint-up(lg){
+            width: 156px;
+        }
     }
 }
 .nav-link {

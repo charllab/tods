@@ -17,7 +17,7 @@ $layouts = $body['add_a_layout_type'];
                 <div class="block__gradient-overlay position-absolute z-index-1"></div>
                 <div class="container position-relative z-index-10 mb-2 mb-lg-0">
                     <div class="row text-white">
-                        <div class="col-12 text-center mb-2 mt-8 mt-lg-4">
+                        <div class="col-12 text-center mb-1 mt-8 mt-lg-8">
                             <?php echo $head['hero_content']; ?>
                         </div><!-- col -->
                     </div><!-- row -->
@@ -67,7 +67,7 @@ $layouts = $body['add_a_layout_type'];
             <section class="hero hero--tall position-relative d-flex justify-content-center align-items-center"
                      style="background: transparent url('<?php echo $banner['url']; ?>') no-repeat center; background-size: cover;">
                 <div class="block__gradient-overlay position-absolute z-index-1"></div>
-                <div class="container position-relative z-index-10 mt-4 py-3 py-md-25 py-lg-0">
+                <div class="container position-relative z-index-10 mt-4 mt-lg-10 py-3 py-md-25 py-lg-0">
                     <div class="row g-lg-2 text-white">
                         <div class="col-lg-6 py-1">
                             <?php echo $head['pingpong_content']; ?>
@@ -89,7 +89,7 @@ $layouts = $body['add_a_layout_type'];
                 <div class="block__gradient-overlay position-absolute z-index-1"></div>
                 <div class="container position-relative z-index-10 text-white pb-1 pt-4 pb-lg-0 pt-lg-0">
                     <div class="row justify-content-center">
-                        <div class="col-lg-8 text-center mt-4">
+                        <div class="col-lg-8 text-center mt-4 mt-lg-10">
                             <?php echo $head['basic_content']; ?>
                         </div><!-- col -->
                     </div><!-- row -->
@@ -194,7 +194,7 @@ endif;
             <section class="email-signup bg-secondary py-2">
                 <div class="container">
                     <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-3 text-white h2_styling">
+                        <div class="col-lg-4 text-white h2_styling">
                             <?php echo $layout['text_area']; ?>
                         </div><!-- col -->
                         <div class="col-lg-7">
