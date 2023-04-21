@@ -103,7 +103,7 @@ endif;
     <?php foreach ($layouts as $layout) : ?>
         <?php if ($layout['acf_fc_layout'] == 'full_width_content'): ?>
             <!--is full_width_content-->
-            <section class="pt-2 pb-1">
+            <section class="full-width-content pt-1 pt-lg-2 pb-1">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -121,10 +121,10 @@ endif;
             <section
                 class="pingpong pingpong--standard <?php echo $colico ? 'pingping--icon' : ''; ?> <?php echo $bgc; ?>">
                 <div class="container position-relative">
-                    <div class="row g-2 g-lg-3">
+                    <div class="row g-1 g-lg-3">
                         <?php if ($colico): ?>
                             <div
-                                class="position-absolute pingping__icon d-flex justify-content-center align-items-center">
+                                class="position-absolute pingping__icon d-none d-lg-flex justify-content-center align-items-center">
                                 <i class="<?php echo $colico; ?> rotate-icon"></i>
                             </div>
                         <?php endif; ?>
@@ -235,7 +235,7 @@ endif;
                         <?php foreach ($icons as $icon) : ?>
                             <div class="icon-column col text-white">
                                 <div
-                                    class="d-flex justify-content-center justify-content-lg-start align-items-center px-2">
+                                    class="d-flex justify-content-center justify-content-lg-start align-items-center px-lg-2">
                                     <div class="icon">
                                         <i class="<?php echo esc_attr($icon['icon_code']); ?>"></i>
                                     </div>
@@ -271,7 +271,7 @@ endif;
                                     foreach ($questionsleft as $question) : ?>
                                         <div class="accordion-item border border-0">
                                             <h2 class="accordion-header">
-                                                <button class="accordion-button custom-accordion-button" type="button"
+                                                <button class="accordion-button custom-accordion-button collapsed" type="button"
                                                         data-bs-toggle="collapse"
                                                         data-bs-target="#collapseQuestion--<?php echo $count; ?>"
                                                         aria-expanded="true"
@@ -299,7 +299,7 @@ endif;
                                             ?>
                                             <div class="accordion-item border border-0">
                                                 <h2 class="accordion-header">
-                                                    <button class="accordion-button custom-accordion-button"
+                                                    <button class="accordion-button custom-accordion-button collapsed"
                                                             type="button"
                                                             data-bs-toggle="collapse"
                                                             data-bs-target="#collapseQuestion--<?php echo $countr; ?>"
@@ -332,7 +332,7 @@ endif;
             $processleft = $layout['process_set'];
             $processright = $layout['process_set_right'];
             if ($processleft) : ?>
-                <section class="accordion-descriptions pb-2">
+                <section class="accordion-descriptions pb-1 pb-lg-2">
                     <div class="container">
                         <div class="row g-3">
                             <div class="col-lg-6">
@@ -342,7 +342,7 @@ endif;
                                         <div class="accordion-item rounded-0">
                                             <h2 class="accordion-header">
                                                 <button
-                                                    class="accordion-button custom-accordion-button text-white rounded-0"
+                                                    class="accordion-button custom-accordion-button text-white rounded-0 collapsed"
                                                     type="button" data-bs-toggle="collapse"
                                                     data-bs-target="#collapseDescriptions--<?php echo $plcount; ?>"
                                                     aria-expanded="true"
@@ -370,7 +370,7 @@ endif;
                                             <div class="accordion-item rounded-0">
                                                 <h2 class="accordion-header">
                                                     <button
-                                                        class="accordion-button custom-accordion-button text-white rounded-0"
+                                                        class="accordion-button custom-accordion-button text-white rounded-0 collapsed"
                                                         type="button" data-bs-toggle="collapse"
                                                         data-bs-target="#collapseDescriptions--<?php echo $prcount; ?>"
                                                         aria-expanded="true"
@@ -404,7 +404,7 @@ endif;
             $tablestyle = $layout['table_style'];
             if ($table):
                 if($tablestyle == 'basic-table'):?>
-                <section class="basic-table pb-2">
+                <section class="basic-table pb-1 pb-lg-2">
                     <div class="container">
                         <div class="table-responsive">
                             <table class="table table-bordered border-secondary table-hover">
@@ -653,84 +653,84 @@ endif;
             <?php
             $speakers = $layout['speakers'];
             if($speakers):?>
-                <section class="profile-cards py-2">
+                <section class="profile-cards pb-1 pb-lg-2">
                     <div class="container">
                         <div class="row">
-                            <?php $id=0; foreach ($speakers as $speaker):?>
-                            <div class="col-12 col-md-6 col-lg-4">
-                                <div class="card border border-0 rounded-0" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $id; ?>">
-                                    <?php
-                                    $speakerphoto = $speaker['speaker_image'];
-                                    ?>
-                                    <img src="<?php echo $speakerphoto['url'];?>" class="card-p card-img-top rounded-0" alt="<?php echo $speakerphoto['alt'];?>">
-                                    <div class="card-body py-50 bg-secondary text-white text-center">
-                                        <p class="card-text lead mb-0"><?php echo $speaker['speaker_name'];?></p>
-                                    </div><!-- card-body-->
-                                </div><!-- card -->
-                                <section class="profile-modals">
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="speaker--<?php echo $id; ?>" tabindex="-1" aria-labelledby="speaker--<?php echo $id; ?>" aria-hidden="true">
-                                        <div class="modal-dialog modal-fullscreen">
-                                            <div class="modal-content" style="background-color: transparent;">
-                                                <div class="container bg-secondary py-2 position-relative">
-                                                    <div class="row align-content-end">
-                                                        <div class="col">
-                                                            <button type="button" class="btn-close ms-auto d-block" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div><!-- col -->
-                                                    </div><!-- row -->
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-lg-8 text-center text-white">
-                                                            <h2 class="text-uppercase">About this Speaker</h2>
-                                                            <?php
-                                                            $speakerphoto = $speaker['speaker_image'];
-                                                            ?>
-                                                            <img src="<?php echo $speakerphoto['url'];?>" class="modal-photo d-block mx-auto mb-1" alt="<?php echo $speakerphoto['alt'];?>">
-                                                            <h2><?php echo $speaker['speaker_name'];?></h2>
-                                                            <?php echo $speaker['speaker_bio'];?>
-                                                            <h3 class="mt-2">Schedule</h3>
-                                                        </div><!-- col -->
-                                                    </div><!-- row -->
-                                                    <div class="row justify-content-center">
-                                                        <div class="col-lg-8">
-                                                            <?php
-                                                            $featured_posts = $speaker['schedule'];
-                                                            if( $featured_posts ): ?>
-                                                                <section class="info-cards">
-                                                                    <?php foreach( $featured_posts as $post ):
-                                                                        // Setup this post for WP functions (variable must be named $post).
-                                                                        setup_postdata($post); ?>
-                                                                        <div class="card border border-1 rounded-0">
-                                                                            <div class="row g-0">
-                                                                                <div class="col-md-3">
-                                                                                    <div class="card-body">
-                                                                                        <div class="info-icon d-flex justify-content-center align-items-center mx-auto">
-                                                                                            <i class="bi bi-calendar4-event"></i>
+                            <?php $emilie=0; foreach ($speakers as $speaker):?>
+                                <div class="col-12 col-md-6 col-lg-4">
+                                    <article class="card border border-0 rounded-0" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $emilie; ?>">
+                                        <?php
+                                        $speakerphoto = $speaker['speaker_image'];
+                                        ?>
+                                        <img src="<?php echo esc_url($speakerphoto['url']);?>" class="card-p card-img-top rounded-0" alt="<?php echo esc_attr($speakerphoto['alt']);?>">
+                                        <div class="card-body py-50 bg-secondary text-white text-center">
+                                            <p class="card-text lead mb-0"><?php echo esc_html($speaker['speaker_name']);?></p>
+                                        </div><!-- card-body-->
+                                    </article><!-- card -->
+                                    <section class="profile-modals">
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="speaker--<?php echo $emilie; ?>" tabindex="-1" aria-labelledby="speaker--<?php echo $emilie; ?>" aria-hidden="true">
+                                            <div class="modal-dialog modal-fullscreen">
+                                                <div class="modal-content" style="background-color: transparent;">
+                                                    <div class="container bg-secondary py-2 position-relative">
+                                                        <div class="row align-content-end">
+                                                            <div class="col">
+                                                                <button type="button" class="btn-close ms-auto d-block" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div><!-- col -->
+                                                        </div><!-- row -->
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-8 text-center text-white">
+                                                                <h2 class="text-uppercase">About this Speaker</h2>
+                                                                <?php
+                                                                $speakerphoto = $speaker['speaker_image'];
+                                                                ?>
+                                                                <img src="<?php echo esc_url($speakerphoto['url']);?>" class="modal-photo d-block mx-auto mb-1" alt="<?php echo esc_attr($speakerphoto['alt']);?>">
+                                                                <h2><?php echo esc_html($speaker['speaker_name']);?></h2>
+                                                                <?php echo wp_kses_post($speaker['speaker_bio']);?>
+                                                                <h3 class="mt-2">Schedule</h3>
+                                                            </div><!-- col -->
+                                                        </div><!-- row -->
+                                                        <div class="row justify-content-center">
+                                                            <div class="col-lg-8">
+                                                                <?php
+                                                                $featured_posts = $speaker['schedule'];
+                                                                if( $featured_posts ): ?>
+                                                                    <section class="info-cards">
+                                                                        <?php foreach( $featured_posts as $post ):
+                                                                            // Setup this post for WP functions (variable must be named $post).
+                                                                            setup_postdata($post); ?>
+                                                                            <div class="card border border-1 rounded-0">
+                                                                                <div class="row g-0">
+                                                                                    <div class="col-md-3">
+                                                                                        <div class="card-body">
+                                                                                            <div class="info-icon d-flex justify-content-center align-items-center mx-auto">
+                                                                                                <i class="bi bi-calendar4-event"></i>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-9">
+                                                                                        <div class="card-body text-secondary position-relative">
+                                                                                            <p class="small mb-0"> <?php the_field( 'time' ); ?></p>
+                                                                                            <h3 class="card-title text-dark fw-normal mb-0"><?php the_title(); ?></h3>
+                                                                                            <p class="card-text lead text-uppercase"><?php the_field( 'speaker' ); ?></p>
+                                                                                            <a href="https://sproing.ca" target="_blank" class="btn btn-outline-secondary z-index-100">Register Now</a>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-md-9">
-                                                                                    <div class="card-body text-secondary position-relative">
-                                                                                        <p class="small mb-0"> <?php the_field( 'time' ); ?></p>
-                                                                                        <h3 class="card-title text-dark fw-normal mb-0"><?php the_title(); ?></h3>
-                                                                                        <p class="card-text lead text-uppercase"><?php the_field( 'speaker' ); ?></p>
-                                                                                        <a href="https://sproing.ca" target="_blank" class="btn btn-outline-secondary z-index-100">Register Now</a>
-                                                                                    </div>
-                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                    <?php endforeach; ?>
-                                                                </section>
-                                                                <?php wp_reset_postdata(); ?>
-                                                            <?php endif; ?>
-                                                        </div><!-- col -->
-                                                    </div><!-- row -->
-                                                </div><!-- container -->
-                                            </div><!-- modal-content -->
-                                        </div><!-- modal-dialog -->
-                                    </div><!-- modal -->
-                                </section>
-                            </div><!-- col -->
-                        <?php $id++; endforeach;?>
+                                                                        <?php endforeach; ?>
+                                                                    </section>
+                                                                    <?php wp_reset_postdata(); ?>
+                                                                <?php endif; ?>
+                                                            </div><!-- col -->
+                                                        </div><!-- row -->
+                                                    </div><!-- container -->
+                                                </div><!-- modal-content -->
+                                            </div><!-- modal-dialog -->
+                                        </div><!-- modal -->
+                                    </section>
+                                </div><!-- col -->
+                                <?php $emilie++; endforeach;?>
                         </div><!-- row -->
                     </div><!-- container -->
                 </section>

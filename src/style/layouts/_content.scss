@@ -81,8 +81,10 @@
     }
 
     .icon {
-        font-size: 40px;
-
+        font-size: 30px;
+        @include media-breakpoint-up(lg) {
+            font-size: 40px;
+        }
         i {
             margin: 0 16px;
         }
@@ -99,11 +101,14 @@
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 20px;
             line-height: 1;
             font-family: $ff-b;
             font-weight: 700;
             margin-bottom: 0;
+            @include media-breakpoint-up(lg) {
+                font-size: 28px;
+            }
         }
 
         span.number {
@@ -140,8 +145,12 @@
 }
 
 .pingpong {
-    padding-top: $spacer*1.5;
-    padding-bottom: $spacer*1.5;
+    padding-top: $spacer;
+    padding-bottom: $spacer;
+    @include media-breakpoint-up(lg) {
+        padding-top: $spacer*1.5;
+        padding-bottom: $spacer*1.5;
+    }
 }
 
 .pingpong.bg-secondary {
@@ -387,7 +396,18 @@
         width: 100%;
 
         .nav-item {
-            margin-right: 16px;
+            border: 1px solid white;
+            @include media-breakpoint-up(lg) {
+                margin-right: 16px;
+            }
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+            .nav-link {
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                }
+            }
 
             &:last-of-type {
                 margin-right: 0;
@@ -604,4 +624,7 @@
         font-family: $ff-b;
         font-weight: 700;
     }
+}
+.full-width-content {
+    padding-bottom: $spacer*.5;
 }

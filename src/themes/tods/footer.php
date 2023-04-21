@@ -1,5 +1,5 @@
 <footer>
-    <section class="contact-form pt-3 pb-2" id="contact">
+    <section class="contact-form pt-1 pt-lg-3 pb-2" id="contact">
         <div class="container">
             <div class="row g-lg-2">
                 <div class="col-lg-7">
@@ -23,7 +23,7 @@
                     </a>
                 </div><!-- col -->
             </div><!-- row -->
-            <nav class="navbar navbar-expand-lg justify-content-center pt-2 pb-1 py-lg-2">
+            <nav class="navbar navbar-expand-lg justify-content-center pt-1 pt-lg-2 pb-1 py-lg-2">
 
                 <?php wp_nav_menu([
                     'theme_location' => 'primary',
