@@ -658,8 +658,8 @@ endif;
                     <div class="container">
                         <div class="row">
                             <?php $emilie=0; foreach ($speakers as $speaker):?>
-                                <div class="col-12 col-md-4 col-xl-3">
-                                    <article class="card border border-0 rounded-0" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $emilie; ?>">
+                                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                                    <article class="card border border-0 rounded-0 mb-75" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $emilie; ?>">
                                         <?php
                                         $speakerphoto = $speaker['speaker_image'];
                                         ?>
@@ -685,7 +685,7 @@ endif;
                                                                 <?php
                                                                 $speakerphoto = $speaker['speaker_image'];
                                                                 ?>
-                                                                <img src="<?php echo esc_url($speakerphoto['url']);?>" class="modal-photo d-block mx-auto mb-1" alt="<?php echo esc_attr($speakerphoto['alt']);?>">
+                                                                <img src="<?php echo esc_url($speakerphoto['url']);?>" class="modal-photo d-block mx-auto mb-1 img-fluid" alt="<?php echo esc_attr($speakerphoto['alt']);?>">
                                                                 <h2><?php echo esc_html($speaker['speaker_name']);?></h2>
                                                                 <?php echo wp_kses_post($speaker['speaker_bio']);?>
                                                                 <h3 class="mt-2">Schedule</h3>
