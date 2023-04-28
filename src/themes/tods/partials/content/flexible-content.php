@@ -555,10 +555,11 @@ endif;
             <?php
             $sponsors = $layout['sponsors'];
             if ($sponsors):
+                $charl = 0;
                 ?>
                 <section class="sponsors pb-2">
                     <div class="container">
-                        <div class="owl-carousel" id="supporters-slider">
+                        <div class="owl-carousel supporters-slider" id="supporters-slider-<?php echo $charl;?>">
                             <?php foreach ($sponsors as $sponsor):
                                 $sponsorlogo = $sponsor['sponsor_logo'];
                                 $sponsorlink = $sponsor['website_link'];
@@ -584,7 +585,7 @@ endif;
                         </div><!-- owl-carousel -->
                     </div><!-- container -->
                 </section>
-            <?php endif; ?>
+            <?php $charl++; endif; ?>
         <?php elseif ($layout['acf_fc_layout'] == 'testimonials'): ?>
             <?php
             $ratings = $layout['testimonial'];
@@ -657,7 +658,7 @@ endif;
                     <div class="container">
                         <div class="row">
                             <?php $emilie=0; foreach ($speakers as $speaker):?>
-                                <div class="col-12 col-md-6 col-lg-4">
+                                <div class="col-12 col-md-4 col-xl-3">
                                     <article class="card border border-0 rounded-0" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $emilie; ?>">
                                         <?php
                                         $speakerphoto = $speaker['speaker_image'];
@@ -702,18 +703,28 @@ endif;
                                                                             <div class="card border border-1 rounded-0">
                                                                                 <div class="row g-0">
                                                                                     <div class="col-md-3">
-                                                                                        <div class="card-body">
-                                                                                            <div class="info-icon d-flex justify-content-center align-items-center mx-auto">
+                                                                                        <div class="card-body pb-0">
+                                                                                            <div class="info-icon d-flex justify-content-center align-items-center mx-md-auto">
                                                                                                 <i class="bi bi-calendar4-event"></i>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="col-md-9">
                                                                                         <div class="card-body text-secondary position-relative">
-                                                                                            <p class="small mb-0"> <?php the_field( 'time' ); ?></p>
+                                                                                            <p class="small mb-250"> <?php the_field( 'time' ); ?></p>
                                                                                             <h3 class="card-title text-dark fw-normal mb-0"><?php the_title(); ?></h3>
-                                                                                            <p class="card-text lead text-uppercase"><?php the_field( 'speaker' ); ?></p>
-                                                                                            <a href="https://sproing.ca" target="_blank" class="btn btn-outline-secondary z-index-100">Register Now</a>
+                                                                                            <p class="card-text lead text-uppercase mb-50"><?php the_field( 'speaker' ); ?></p>
+                                                                                            <?php
+                                                                                            $thedetails = get_field('event_details');
+                                                                                            $registerbutton = get_field('register_now');
+                                                                                            if($thedetails) : ?>
+                                                                                            <p class="text-dark mb-50"><?php the_field('event_details');?></p>
+                                                                                            <?php endif;
+                                                                                            if($registerbutton == 'show') :
+                                                                                            $registernow = get_field('register_global_link', 'option');
+                                                                                            ?>
+                                                                                            <a href="<?php echo $registernow['url'];?>" target="<?php echo $registernow['target'];?>" class="btn btn-outline-secondary z-index-100 mt-50"><?php echo $registernow['title'];?></a>
+                                                                                            <?php endif;?>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>

@@ -30,7 +30,7 @@ jQuery(function () {
     });
 
     // Sponsor slider
-    jQuery('#supporters-slider').owlCarousel({
+    jQuery('.supporters-slider').owlCarousel({
         loop: true,
         margin: 24,
         nav: true,
