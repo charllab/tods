@@ -146,3 +146,18 @@ var targetBlankExternalLinks = function () {
             jQuery(this).attr('target', '_blank');
         });
 };
+
+
+//event to user to modal
+document.addEventListener("DOMContentLoaded", function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const modalId = urlParams.get("id");
+
+    if (modalId) {
+        const targetModal = document.getElementById(modalId);
+        if (targetModal) {
+            const modalInstance = new bootstrap.Modal(targetModal);
+            modalInstance.show();
+        }
+    }
+});
