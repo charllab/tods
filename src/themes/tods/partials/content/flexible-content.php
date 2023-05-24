@@ -9,7 +9,7 @@ $layouts = $body['add_a_layout_type'];
 //echo '</pre>';
 //?>
 <?php if ($header) : ?>
-    <?php foreach ($header as $head) : ?>
+    <?php foreach ($header as $head) : $generalcounter = 0;?>
         <?php if ($head['acf_fc_layout'] == 'hero'): ?>
             <!--is hero-->
             <section class="hero hero--tall position-relative d-flex justify-content-center align-items-center"
@@ -404,31 +404,31 @@ endif;
             $tablestyle = $layout['table_style'];
             if ($table):
                 if($tablestyle == 'basic-table'):?>
-                <section class="basic-table pb-1 pb-lg-2">
-                    <div class="container">
-                        <div class="table-responsive">
-                            <table class="table table-bordered border-secondary table-hover">
-                                <thead class="bg-secondary text-white">
-                                <tr>
-                                <?php $trs = $table['header']; foreach ($trs as $tr): ?>
-                                    <th scope="col"><?php echo $tr['c'];?></th>
-                                <?php endforeach;?>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach ($table['body'] as $tr): ?>
-                                <tr>
-                                    <?php foreach ($tr as $td): ?>
-                                        <td><?php echo $td['c'];?></td>
+                    <section class="basic-table pb-1 pb-lg-2">
+                        <div class="container">
+                            <div class="table-responsive">
+                                <table class="table table-bordered border-secondary table-hover">
+                                    <thead class="bg-secondary text-white">
+                                    <tr>
+                                        <?php $trs = $table['header']; foreach ($trs as $tr): ?>
+                                            <th scope="col"><?php echo $tr['c'];?></th>
+                                        <?php endforeach;?>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($table['body'] as $tr): ?>
+                                        <tr>
+                                            <?php foreach ($tr as $td): ?>
+                                                <td><?php echo $td['c'];?></td>
+                                            <?php endforeach;?>
+                                        </tr>
                                     <?php endforeach;?>
-                                </tr>
-                                <?php endforeach;?>
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                    <?php else: ?>
+                    </section>
+                <?php else: ?>
                     <section class="fancy-table pb-2">
                         <div class="container">
                             <div class="row no-gutters">
@@ -459,22 +459,22 @@ endif;
                             </div><!-- row -->
                         </div><!-- container -->
                     </section>
-                    <?php endif;?>
+                <?php endif;?>
             <?php endif; ?>
         <?php elseif ($layout['acf_fc_layout'] == 'tabbed_events_schedule'): ?>
             <!--is tabbed_events_schedule-->
             <?php $tabs = $layout['event'];
-            if ($tabs):?>
+            if ($tabs): ?>
                 <section class="data-tabs">
                     <div class="container">
-                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                        <ul class="nav nav-pills" id="pills-tab-<?php echo $generalcounter;?>" role="tablist">
                             <?php $tcounter = 0;
                             foreach ($tabs as $tab): ?>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link <?php echo $tcounter == 0 ? 'active' : ''; ?>"
-                                            id="pills-<?php echo $tcounter; ?>-tab" data-bs-toggle="pill"
-                                            data-bs-target="#pills-<?php echo $tcounter; ?>" type="button" role="tab"
-                                            aria-controls="pills-<?php echo $tcounter; ?>"
+                                            id="pills-<?php echo $tcounter; ?>-tab-<?php echo $generalcounter;?>" data-bs-toggle="pill"
+                                            data-bs-target="#pills-<?php echo $tcounter; ?>-<?php echo $generalcounter;?>" type="button" role="tab"
+                                            aria-controls="pills-<?php echo $tcounter; ?>-<?php echo $generalcounter;?>"
                                             aria-selected="true">
                                         <?php echo $tab['slot_title']; ?>
                                     </button>
@@ -482,12 +482,12 @@ endif;
                                 <?php $tcounter++;
                             endforeach; ?>
                         </ul>
-                        <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-content" id="pills-tabContent-<?php echo $generalcounter;?>">
                             <?php $tcounter = 0;
                             foreach ($tabs as $tab): $slots = $tab['slots']; ?>
                                 <div class="tab-pane fade <?php echo $tcounter == 0 ? 'show active' : ''; ?>"
-                                     id="pills-<?php echo $tcounter; ?>" role="tabpanel"
-                                     aria-labelledby="pills-<?php echo $tcounter; ?>-tab"
+                                     id="pills-<?php echo $tcounter; ?>-<?php echo $generalcounter;?>" role="tabpanel"
+                                     aria-labelledby="pills-<?php echo $tcounter; ?>-tab-<?php echo $generalcounter;?>"
                                      tabindex="0">
                                     <ul class="list-group list-group-flush">
                                         <?php foreach ($slots as $slot): ?>
@@ -585,7 +585,7 @@ endif;
                         </div><!-- owl-carousel -->
                     </div><!-- container -->
                 </section>
-            <?php $charl++; endif; ?>
+                <?php $charl++; endif; ?>
         <?php elseif ($layout['acf_fc_layout'] == 'testimonials'): ?>
             <?php
             $ratings = $layout['testimonial'];
@@ -718,12 +718,12 @@ endif;
                                                                                             $thedetails = get_field('event_details');
                                                                                             $registerbutton = get_field('register_now');
                                                                                             if($thedetails) : ?>
-                                                                                            <p class="text-dark mb-50"><?php the_field('event_details');?></p>
+                                                                                                <p class="text-dark mb-50"><?php the_field('event_details');?></p>
                                                                                             <?php endif;
                                                                                             if($registerbutton == 'show') :
-                                                                                            $registernow = get_field('register_global_link', 'option');
-                                                                                            ?>
-                                                                                            <a href="<?php echo $registernow['url'];?>" target="<?php echo $registernow['target'];?>" class="btn btn-outline-secondary z-index-100 mt-50"><?php echo $registernow['title'];?></a>
+                                                                                                $registernow = get_field('register_global_link', 'option');
+                                                                                                ?>
+                                                                                                <a href="<?php echo $registernow['url'];?>" target="<?php echo $registernow['target'];?>" class="btn btn-outline-secondary z-index-100 mt-50"><?php echo $registernow['title'];?></a>
                                                                                             <?php endif;?>
                                                                                         </div>
                                                                                     </div>
@@ -768,6 +768,7 @@ endif;
                 </section>
             <?php endif; ?>
         <?php endif;
+        $generalcounter++;
     endforeach;
     wp_reset_postdata();
 endif;
