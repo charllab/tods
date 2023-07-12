@@ -654,12 +654,12 @@ endif;
             <?php
             $speakers = $layout['speakers'];
             if($speakers):?>
-                <section class="profile-cards pb-1 pb-lg-2">
+                <section class="profile-cards pb-1 pb-lg-2" id="<?php echo $generalcounter; ?>">
                     <div class="container">
                         <div class="row">
                             <?php $emilie=0; foreach ($speakers as $speaker):?>
                                 <div class="col-12 col-sm-6 col-md-4 col-xl-3">
-                                    <article class="card border border-0 rounded-0 mb-75" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $emilie; ?>">
+                                    <article class="card border border-0 rounded-0 mb-75" data-bs-toggle="modal" data-bs-target="#speaker--<?php echo $generalcounter . '-' . $emilie; ?>">
                                         <?php
                                         $speakerphoto = $speaker['speaker_image'];
                                         ?>
@@ -670,7 +670,7 @@ endif;
                                     </article><!-- card -->
                                     <section class="profile-modals">
                                         <!-- Modal -->
-                                        <div class="modal fade" id="speaker--<?php echo $emilie; ?>" tabindex="-1" aria-labelledby="speaker--<?php echo $emilie; ?>" aria-hidden="true">
+                                        <div class="modal fade" id="speaker--<?php echo $generalcounter . '-' . $emilie; ?>" tabindex="-1" aria-labelledby="speaker--<?php echo $generalcounter . '-' . $emilie; ?>" aria-hidden="true">
                                             <div class="modal-dialog modal-fullscreen">
                                                 <div class="modal-content" style="background-color: transparent;">
                                                     <div class="container bg-secondary py-2 position-relative">
